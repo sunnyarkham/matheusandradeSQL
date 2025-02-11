@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Fev-2025 às 18:09
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 11-Fev-2025 às 20:40
+-- Versão do servidor: 10.4.28-MariaDB
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `matheusandradeestoque`
 --
+DROP DATABASE IF EXISTS `matheusandradeestoque`;
 CREATE DATABASE IF NOT EXISTS `matheusandradeestoque` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `matheusandradeestoque`;
 
@@ -118,7 +119,9 @@ INSERT INTO `pedido_has_poduto` (`pedido_Num_pedido`, `Poduto_Cod_Produto`, `QTD
 (91, 77, '40'),
 (97, 77, '20'),
 (101, 31, '9'),
+(101, 78, '18'),
 (103, 53, '37'),
+(103, 78, '10'),
 (104, 53, '32'),
 (105, 78, '10'),
 (108, 13, '17'),
@@ -161,16 +164,16 @@ CREATE TABLE `poduto` (
 --
 
 INSERT INTO `poduto` (`Cod_Produto`, `unida_produto`, `desc_produto`, `valor_unit`) VALUES
-(13, 'G', 'Ouro', '6.18'),
-(22, 'M', 'Linho', '0.11'),
-(25, 'Kg', 'Queijo', '0.97'),
-(30, 'SAC', 'Açucar', '0.30'),
-(31, 'Bar', 'Chocolate', '0.87'),
-(45, 'M', 'Madeira', '0.25'),
-(53, 'M', 'Linha', '1.80'),
-(77, 'M', 'Papel', '1.05'),
-(78, 'L', 'Vinho', '2.00'),
-(87, 'M', 'Cano', '1.97');
+(13, 'G', 'Ouro', 6.18),
+(22, 'M', 'Linho', 0.11),
+(25, 'Kg', 'Queijo', 0.97),
+(30, 'SAC', 'Açucar', 0.30),
+(31, 'Bar', 'Chocolate', 0.87),
+(45, 'M', 'Madeira', 0.25),
+(53, 'M', 'Linha', 1.80),
+(77, 'M', 'Papel', 1.05),
+(78, 'L', 'Vinho', 2.00),
+(87, 'M', 'Cano', 1.97);
 
 -- --------------------------------------------------------
 
@@ -190,15 +193,15 @@ CREATE TABLE `vendedor` (
 --
 
 INSERT INTO `vendedor` (`Cod_Vendedor`, `Nome_vendedor`, `sal_fixo`, `faixa_comissao`) VALUES
-(11, 'João', '2780.00', 'C'),
-(101, 'João', '2650.32', 'C'),
-(111, 'Carlos', '2490.00', 'A'),
-(209, 'José', '1800.00', 'C'),
-(213, 'Jonas', '2300.50', 'A'),
-(240, 'Antonio', '9500.00', 'C'),
-(250, 'Mauricío', '2930.00', 'B'),
-(310, 'Josias', '870.00', 'B'),
-(720, 'Felipe', '4600.00', 'A');
+(11, 'João', 2780.00, 'C'),
+(101, 'João', 2650.32, 'C'),
+(111, 'Carlos', 2490.00, 'A'),
+(209, 'José', 1800.00, 'C'),
+(213, 'Jonas', 2300.50, 'A'),
+(240, 'Antonio', 9500.00, 'C'),
+(250, 'Mauricío', 2930.00, 'B'),
+(310, 'Josias', 870.00, 'B'),
+(720, 'Felipe', 4600.00, 'A');
 
 --
 -- Índices para tabelas despejadas
